@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://reiwuwejf7di"]
 
-[ext_resource type="Script" uid="uid://mp3x1whr3cxv" path="res://mini_game_select.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://mp3x1whr3cxv" path="res://scripts/mini_game_select.gd" id="1_o5qli"]
 
 [node name="main" type="Node2D"]
 
 [node name="miniGameSelect" type="Node2D" parent="."]
-script = ExtResource("1_ig7tw")
+script = ExtResource("1_o5qli")
 
 [node name="minigameContainer" type="Node2D" parent="miniGameSelect"]

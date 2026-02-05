@@ -23,7 +23,7 @@ func load_minigame(path: String):
 	
 #Calls Minigame on start
 func _ready() -> void:
-	load_minigame("res://test.tscn") #currently used for testing
+	load_minigame("res://scenes//test.tscn") #currently used for testing
 #PackedScene switch to preload PackedScene here and send it to function
 func _on_minigame_finished():
 	print("Game finished")
