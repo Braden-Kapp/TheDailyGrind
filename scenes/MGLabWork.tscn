@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://cp86d45ple7rf"]
+
+[ext_resource type="Script" uid="uid://s6oh3chj7a43" path="res://scripts/mgLabWorkParent.gd" id="1_8jidy"]
+[ext_resource type="Texture2D" uid="uid://w02wjeyvmca1" path="res://art/local/LabWork.png" id="1_lvsya"]
+[ext_resource type="Script" uid="uid://csnhdjur7g1fa" path="res://scripts/MGLabWork.gd" id="2_syjck"]
+[ext_resource type="Texture2D" uid="uid://dtstsa0yvipux" path="res://art/local/LabWorkGlass.png" id="2_ybuha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybuha"]
+size = Vector2(37, 7.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syjck"]
+size = Vector2(20, 182)
+
+[node name="MGLabWork" type="Node2D"]
+script = ExtResource("1_8jidy")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_lvsya")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(260, 190)
+script = ExtResource("2_syjck")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-4, -11.375)
+shape = SubResource("RectangleShape2D_ybuha")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_ybuha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-5, 0)
+shape = SubResource("RectangleShape2D_ybuha")
+debug_color = Color(0.933632, 0.123661, 0.562017, 0.42)
+
+[node name="CollisionWalls" type="Node2D" parent="."]
+
+[node name="WallL" type="StaticBody2D" parent="CollisionWalls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionWalls/WallL"]
+position = Vector2(57, 98)
+shape = SubResource("RectangleShape2D_syjck")
+
+[node name="WallR" type="StaticBody2D" parent="CollisionWalls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionWalls/WallR"]
+position = Vector2(426, 99)
+shape = SubResource("RectangleShape2D_syjck")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

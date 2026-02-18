@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciol7tlnhogc7"]
+
+[ext_resource type="Script" uid="uid://bnd0beclk0u4u" path="res://scripts/static_body_2d.gd" id="1_v1ydo"]
+[ext_resource type="Texture2D" uid="uid://cs0ckrtjd8p1n" path="res://art/local/Droplet3.png" id="2_pamud"]
+[ext_resource type="Texture2D" uid="uid://dpk1eiamtwin6" path="res://art/local/Droplet1.png" id="3_mlfni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c57em"]
+size = Vector2(24, 23)
+
+[node name="Droplets" type="Node2D"]
+
+[node name="StaticBody2D" type="RigidBody2D" parent="."]
+script = ExtResource("1_v1ydo")
+
+[node name="GSprite" type="Sprite2D" parent="StaticBody2D"]
+
+[node name="OSprite" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_pamud")
+
+[node name="BSprite" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_mlfni")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(-2, -1.5)
+shape = SubResource("RectangleShape2D_c57em")

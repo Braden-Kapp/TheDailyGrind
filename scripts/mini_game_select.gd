@@ -2,6 +2,9 @@ extends Node2D
 #STYLE NODES GET CAMEL CASE ALL ELSE USE _SEPERATION
 @onready var minigame_container = $minigameContainer
 var current_minigame: Node = null
+var score = 0
+var lives = 3
+var currentTimer = 9.0
 
 func load_minigame(path: String):
 	# Potentially Remove the current minigame
@@ -20,17 +23,28 @@ func load_minigame(path: String):
 	#add the finish signal
 	if current_minigame.has_signal("finished"):
 		current_minigame.finished.connect(_on_minigame_finished)
-	
+	if current_minigame.has_signal("fail"):
+		current_minigame.fail.connect(_on_minigame_fail)
+	if current_minigame.has_node("Timer"):
+		current_minigame.get_node("Timer").wait_time = currentTimer
+		current_minigame.get_node("Timer").start()
 #Calls Minigame on start
 func _ready() -> void:
-	load_minigame("res://scenes//test.tscn") #currently used for testing
+	load_minigame("res://scenes//MGLabWork.tscn") #currently used for testing
 #PackedScene switch to preload PackedScene here and send it to function
 func _on_minigame_finished():
 	print("Game finished")
 	#remove and free the cur minigame
+	score += 100
 	current_minigame.queue_free()
 	current_minigame = null
 	
+func _on_minigame_fail():
+	print("Game finished")
+	#remove and free the cur minigame
+	lives -= 1
+	current_minigame.queue_free()
+	current_minigame = null
 #ADD TO ALL MINIGAMES
 #signal finished
 
@@ -39,10 +53,7 @@ func _on_minigame_finished():
 #    queue_free()
 
 #To edit vars in future
-#current_minigame.score
 #To access Nodes
-#if current_minigame.has_node("Timer"):
-#	current_minigame.get_node("Timer").wait_time = 5.0
 
 #cannot access:
 #@onready variables before _ready() 
