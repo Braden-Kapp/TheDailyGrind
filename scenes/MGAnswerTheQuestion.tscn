@@ -1,0 +1,113 @@
+[gd_scene load_steps=5 format=3 uid="uid://dphf66rsy17ww"]
+
+[ext_resource type="Script" uid="uid://d0a3ployfuqni" path="res://scripts/MGAnswerTheQuestion.gd" id="1_2fmug"]
+[ext_resource type="Texture2D" uid="uid://bx6f2dw1gm4h0" path="res://art/minigames/AnswerTheQuestion.png" id="1_70oug"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_70oug"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_2fmug"]
+font_size = 26
+font_color = Color(0, 0, 0, 1)
+
+[node name="MGAnswerTheQuestion" type="Node2D"]
+script = ExtResource("1_2fmug")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_70oug")
+
+[node name="Questions" type="Node" parent="."]
+
+[node name="Q1" type="Label" parent="Questions"]
+visible = false
+offset_left = 105.0
+offset_top = 62.0
+offset_right = 187.0
+offset_bottom = 104.0
+text = "1+1=?"
+label_settings = SubResource("LabelSettings_70oug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Q2" type="Label" parent="Questions"]
+visible = false
+offset_left = 105.0
+offset_top = 62.0
+offset_right = 187.0
+offset_bottom = 104.0
+text = "2+2=?"
+label_settings = SubResource("LabelSettings_70oug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Q3" type="Label" parent="Questions"]
+visible = false
+offset_left = 105.0
+offset_top = 62.0
+offset_right = 187.0
+offset_bottom = 104.0
+text = "3+3=?"
+label_settings = SubResource("LabelSettings_70oug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Q4" type="Label" parent="Questions"]
+visible = false
+offset_left = 105.0
+offset_top = 62.0
+offset_right = 187.0
+offset_bottom = 104.0
+text = "4+4=?"
+label_settings = SubResource("LabelSettings_70oug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Answers" type="Node" parent="."]
+
+[node name="2" type="Label" parent="Answers"]
+offset_left = 370.0
+offset_top = 44.0
+offset_right = 450.0
+offset_bottom = 90.0
+text = "2"
+label_settings = SubResource("LabelSettings_2fmug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Answers"]
+visible = false
+offset_left = 370.0
+offset_top = 44.0
+offset_right = 450.0
+offset_bottom = 90.0
+text = "4"
+label_settings = SubResource("LabelSettings_2fmug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Label" parent="Answers"]
+visible = false
+offset_left = 370.0
+offset_top = 44.0
+offset_right = 450.0
+offset_bottom = 90.0
+text = "6"
+label_settings = SubResource("LabelSettings_2fmug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="Label" parent="Answers"]
+visible = false
+offset_left = 370.0
+offset_top = 44.0
+offset_right = 450.0
+offset_bottom = 90.0
+text = "8"
+label_settings = SubResource("LabelSettings_2fmug")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

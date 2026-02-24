@@ -1,0 +1,129 @@
+[gd_scene load_steps=21 format=3 uid="uid://csixle66ntrw3"]
+
+[ext_resource type="Script" uid="uid://b822qx8ghb8lk" path="res://MGFillOutTheExam.gd" id="1_4152b"]
+[ext_resource type="Texture2D" uid="uid://cvtgak8luowh2" path="res://art/minigames/FillOutTheExam.png" id="1_xrjj1"]
+[ext_resource type="Texture2D" uid="uid://cotp1hcg7whnq" path="res://art/minigames/FillOutTheExam_FillInThisOne.png" id="2_b2iin"]
+[ext_resource type="Texture2D" uid="uid://bwlox5egpn4i1" path="res://art/minigames/FillOutTheExam_FilledIn.png" id="4_c26kb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me23y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ko2xr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0gmc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4152b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x02ii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b1003"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woal8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c26kb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3juvl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rk4fs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fo5r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xsntg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mfyb0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01kh4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62oif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n76vw"]
+
+[node name="MGFillOutTheExam" type="Node2D"]
+script = ExtResource("1_4152b")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_xrjj1")
+
+[node name="Q1" type="Button" parent="."]
+offset_left = 339.0
+offset_top = 105.0
+offset_right = 370.0
+offset_bottom = 136.0
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_me23y")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ko2xr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p0gmc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4152b")
+
+[node name="GreySprite" type="Sprite2D" parent="Q1"]
+position = Vector2(16, 15)
+texture = ExtResource("2_b2iin")
+
+[node name="RedSprite" type="Sprite2D" parent="Q1"]
+visible = false
+position = Vector2(16, 15)
+texture = ExtResource("4_c26kb")
+
+[node name="Q2" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 155.0
+offset_right = 335.0
+offset_bottom = 186.0
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_x02ii")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b1003")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_woal8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c26kb")
+
+[node name="GreySprite" type="Sprite2D" parent="Q2"]
+position = Vector2(16, 15)
+texture = ExtResource("2_b2iin")
+
+[node name="RedSprite" type="Sprite2D" parent="Q2"]
+visible = false
+position = Vector2(16, 15)
+texture = ExtResource("4_c26kb")
+
+[node name="Q3" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 205.0
+offset_right = 335.0
+offset_bottom = 236.0
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_3juvl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rk4fs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1fo5r")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xsntg")
+
+[node name="GreySprite" type="Sprite2D" parent="Q3"]
+position = Vector2(16, 15)
+texture = ExtResource("2_b2iin")
+
+[node name="RedSprite" type="Sprite2D" parent="Q3"]
+visible = false
+position = Vector2(16, 15)
+texture = ExtResource("4_c26kb")
+
+[node name="Q4" type="Button" parent="."]
+offset_left = 269.0
+offset_top = 255.0
+offset_right = 300.0
+offset_bottom = 286.0
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mfyb0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_01kh4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_62oif")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n76vw")
+
+[node name="GreySprite" type="Sprite2D" parent="Q4"]
+position = Vector2(16, 15)
+texture = ExtResource("2_b2iin")
+
+[node name="RedSprite" type="Sprite2D" parent="Q4"]
+visible = false
+position = Vector2(16, 15)
+texture = ExtResource("4_c26kb")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Q1" to="." method="_on_q_1_pressed"]
+[connection signal="pressed" from="Q2" to="." method="_on_q_2_pressed"]
+[connection signal="pressed" from="Q3" to="." method="_on_q_3_pressed"]
+[connection signal="pressed" from="Q4" to="." method="_on_q_4_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

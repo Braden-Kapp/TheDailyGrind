@@ -30,7 +30,7 @@ func load_minigame(path: String):
 		current_minigame.get_node("Timer").start()
 #Calls Minigame on start
 func _ready() -> void:
-	load_minigame("res://scenes//MGLabWork.tscn") #currently used for testing
+	load_minigame("res://scenes//MGFillOutTheExam.tscn") #currently used for testing
 #PackedScene switch to preload PackedScene here and send it to function
 func _on_minigame_finished():
 	print("Game finished")
