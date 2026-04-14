@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6n7up703uynt"]
+
+[ext_resource type="Script" uid="uid://bbnua2x1cruyp" path="res://scripts/MGStirTheCoffee.gd" id="1_jjy2p"]
+[ext_resource type="Texture2D" uid="uid://dgyobo2s8gcxo" path="res://art/minigames/StirTheCoffee.png" id="1_rp41w"]
+[ext_resource type="Texture2D" uid="uid://1u8vb4vqfe3s" path="res://art/minigames/StirTheCoffee_Liquid5.png" id="3_hk1cv"]
+[ext_resource type="Texture2D" uid="uid://bqh0218ltcjph" path="res://art/minigames/StirTheCoffee_Liquid4.png" id="4_h26na"]
+[ext_resource type="Texture2D" uid="uid://6ki5u5460wt" path="res://art/minigames/StirTheCoffee_Liquid3.png" id="5_ycoxk"]
+[ext_resource type="Texture2D" uid="uid://bjfwjr5uj5q5" path="res://art/minigames/StirTheCoffee_Liquid2.png" id="6_nh76q"]
+[ext_resource type="Texture2D" uid="uid://dtu3vg2yhw4v0" path="res://art/minigames/StirTheCoffee_Liquid1.png" id="7_4rna5"]
+
+[node name="MGStirTheCoffee" type="Node2D"]
+script = ExtResource("1_jjy2p")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_rp41w")
+
+[node name="CoffeeColor" type="Node2D" parent="."]
+position = Vector2(240, 160)
+
+[node name="C1" type="Sprite2D" parent="CoffeeColor"]
+texture = ExtResource("3_hk1cv")
+
+[node name="C2" type="Sprite2D" parent="CoffeeColor"]
+texture = ExtResource("4_h26na")
+
+[node name="C3" type="Sprite2D" parent="CoffeeColor"]
+texture = ExtResource("5_ycoxk")
+
+[node name="C4" type="Sprite2D" parent="CoffeeColor"]
+texture = ExtResource("6_nh76q")
+
+[node name="C5" type="Sprite2D" parent="CoffeeColor"]
+texture = ExtResource("7_4rna5")
+
+[node name="Letter" type="Node2D" parent="."]
+
+[node name="W" type="Label" parent="Letter"]
+offset_left = 211.0
+offset_top = 53.0
+offset_right = 267.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.81, 0.57132, 0.3888, 1)
+theme_override_font_sizes/font_size = 45
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D" type="Label" parent="Letter"]
+visible = false
+offset_left = 294.0
+offset_top = 131.0
+offset_right = 359.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0.811765, 0.572549, 0.388235, 1)
+theme_override_font_sizes/font_size = 45
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S" type="Label" parent="Letter"]
+visible = false
+offset_left = 215.0
+offset_top = 203.0
+offset_right = 262.0
+offset_bottom = 266.0
+theme_override_colors/font_color = Color(0.811765, 0.572549, 0.388235, 1)
+theme_override_font_sizes/font_size = 45
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Label" parent="Letter"]
+visible = false
+offset_left = 123.0
+offset_top = 130.0
+offset_right = 181.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.811765, 0.572549, 0.388235, 1)
+theme_override_font_sizes/font_size = 45
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

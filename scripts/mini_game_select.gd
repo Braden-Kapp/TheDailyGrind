@@ -5,6 +5,7 @@ var current_minigame: Node = null
 var score = 0
 var lives = 3
 var currentTimer = 9.0
+var randVictory= 0
 
 func load_minigame(path: String):
 	# Potentially Remove the current minigame
@@ -30,19 +31,32 @@ func load_minigame(path: String):
 		current_minigame.get_node("Timer").start()
 #Calls Minigame on start
 func _ready() -> void:
-	load_minigame("res://scenes//MGFillOutTheExam.tscn") #currently used for testing
+	pass
+	#load_minigame("res://scenes//MGFillTheCup.tscn") #currently used for testing
 #PackedScene switch to preload PackedScene here and send it to function
 func _on_minigame_finished():
 	print("Game finished")
 	#remove and free the cur minigame
+	randVictory = randi_range(0,4)
 	score += 100
 	current_minigame.queue_free()
+	if(randVictory == 0):
+		get_node("WinSound/Win1").playing = true
+	if(randVictory == 1):
+		get_node("WinSound/Win2").playing = true
+	if(randVictory == 2):
+		get_node("WinSound/Win3").playing = true
+	if(randVictory == 3):
+		get_node("WinSound/Win4").playing = true
+	if(randVictory == 4):
+		get_node("WinSound/Win5").playing = true
 	current_minigame = null
 	
 func _on_minigame_fail():
 	print("Game finished")
 	#remove and free the cur minigame
 	lives -= 1
+	get_node("FAIL").playing = true
 	current_minigame.queue_free()
 	current_minigame = null
 #ADD TO ALL MINIGAMES

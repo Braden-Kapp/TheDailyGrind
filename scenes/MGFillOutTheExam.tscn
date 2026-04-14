@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://csixle66ntrw3"]
 
-[ext_resource type="Script" uid="uid://b822qx8ghb8lk" path="res://MGFillOutTheExam.gd" id="1_4152b"]
+[ext_resource type="Script" uid="uid://b822qx8ghb8lk" path="res://scripts/MGFillOutTheExam.gd" id="1_4152b"]
 [ext_resource type="Texture2D" uid="uid://cvtgak8luowh2" path="res://art/minigames/FillOutTheExam.png" id="1_xrjj1"]
 [ext_resource type="Texture2D" uid="uid://cotp1hcg7whnq" path="res://art/minigames/FillOutTheExam_FillInThisOne.png" id="2_b2iin"]
 [ext_resource type="Texture2D" uid="uid://bwlox5egpn4i1" path="res://art/minigames/FillOutTheExam_FilledIn.png" id="4_c26kb"]

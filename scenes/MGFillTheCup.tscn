@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0c2e547ukehl"]
+
+[ext_resource type="Texture2D" uid="uid://cylvfj45duh60" path="res://art/minigames/FillTheCup.png" id="1_5i0jl"]
+[ext_resource type="Script" uid="uid://qti0l4a42kse" path="res://scripts/MGFillTheCup.gd" id="1_ccjb5"]
+[ext_resource type="Texture2D" uid="uid://drbvsp0lpsi1a" path="res://art/minigames/FillTheCup_PressedButton.png" id="2_ct1ky"]
+[ext_resource type="Texture2D" uid="uid://wwyd1r27tu4p" path="res://art/minigames/FillTheCup_NotPressedButton.png" id="3_jwevf"]
+[ext_resource type="Texture2D" uid="uid://ccha6tj605epk" path="res://art/minigames/FillTheCup_Liquid.png" id="5_v7yis"]
+[ext_resource type="Texture2D" uid="uid://0fdnmcmlbhpc" path="res://art/minigames/FillTheCup_AroundCup.png" id="6_1k28a"]
+[ext_resource type="Texture2D" uid="uid://ccnybb5yn314i" path="res://art/minigames/FillTheCup_Cup.png" id="7_wnlhf"]
+[ext_resource type="Texture2D" uid="uid://dikb4xyv0hsdc" path="res://art/minigames/FillTheCup_BottomPiece.png" id="8_v7yis"]
+[ext_resource type="AudioStream" uid="uid://dhqlfyxvbsgrl" path="res://music/pour.mp3" id="9_1k28a"]
+
+[node name="MGFillTheCup" type="Node2D"]
+script = ExtResource("1_ccjb5")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_5i0jl")
+
+[node name="But" type="Node2D" parent="."]
+position = Vector2(320, 27)
+
+[node name="Pressed" type="Sprite2D" parent="But"]
+texture = ExtResource("2_ct1ky")
+
+[node name="NotPress" type="Sprite2D" parent="But"]
+texture = ExtResource("3_jwevf")
+
+[node name="Liquid" type="Sprite2D" parent="."]
+position = Vector2(335, 222.375)
+scale = Vector2(1, 4.15)
+texture = ExtResource("5_v7yis")
+
+[node name="Sur" type="Sprite2D" parent="."]
+position = Vector2(335, 180)
+texture = ExtResource("6_1k28a")
+
+[node name="Pour" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(336, 148.858)
+rotation = 1.5708
+scale = Vector2(1.3549, 1)
+texture = ExtResource("5_v7yis")
+
+[node name="Cup" type="Sprite2D" parent="."]
+position = Vector2(335, 180)
+texture = ExtResource("7_wnlhf")
+
+[node name="Line" type="Node2D" parent="."]
+modulate = Color(1, 0.215686, 0.0352941, 0.513726)
+position = Vector2(336, 169)
+
+[node name="Sprite2D" type="Sprite2D" parent="Line"]
+position = Vector2(-25, 1)
+scale = Vector2(0.247368, 1)
+texture = ExtResource("5_v7yis")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Line"]
+position = Vector2(-1.90735e-06, 1)
+scale = Vector2(0.247368, 1)
+texture = ExtResource("5_v7yis")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Line"]
+position = Vector2(25, 1)
+scale = Vector2(0.247368, 1)
+texture = ExtResource("5_v7yis")
+
+[node name="Lower" type="Sprite2D" parent="."]
+position = Vector2(335, 275)
+texture = ExtResource("8_v7yis")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="PourSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_1k28a")
+volume_db = -15.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl02vp52vacb"
+path="res://.godot/imported/Victory1 (1).mp3-bcb4e879c0681a67c77965390dc2966a.mp3str"
+
+[deps]
+
+source_file="res://music/Victory1 (1).mp3"
+dest_files=["res://.godot/imported/Victory1 (1).mp3-bcb4e879c0681a67c77965390dc2966a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

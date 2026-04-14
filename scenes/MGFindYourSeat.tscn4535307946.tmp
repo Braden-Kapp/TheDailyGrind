@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlo5n3m6mjid5"]
+
+[ext_resource type="Texture2D" uid="uid://c8ry8bman0p4c" path="res://art/minigames/FindYourSeat_Alt1.png" id="1_qxanf"]
+[ext_resource type="Texture2D" uid="uid://6tryla56kosh" path="res://art/minigames/FindYourSeat_Alt2.png" id="2_jd0lo"]
+[ext_resource type="Texture2D" uid="uid://dih4bckcwpu1b" path="res://art/minigames/FindYourSeat_Alt3.png" id="3_6qklq"]
+[ext_resource type="Script" uid="uid://bgmfk6b521n2f" path="res://scripts/findYourSeatCharacter.gd" id="4_ohydr"]
+[ext_resource type="Texture2D" uid="uid://gheee68wtu4r" path="res://art/minigames/FindYourSeat_CrocIcon.png" id="5_mxt41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxanf"]
+size = Vector2(81, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi4r4"]
+size = Vector2(31.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy83n"]
+size = Vector2(20, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6p0g"]
+size = Vector2(35, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fljgh"]
+size = Vector2(20, 14)
+
+[node name="MGFindYourSeat" type="Node2D"]
+
+[node name="Background1" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_qxanf")
+
+[node name="Area2D" type="Area2D" parent="Background1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(181, 35)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(182, 110)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(89, 107)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(1, 107)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(-90, 108)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(-87, 30)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(-91, -40)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Background1/Area2D"]
+position = Vector2(4, -42)
+shape = SubResource("RectangleShape2D_qxanf")
+
+[node name="Background2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(240, 160)
+texture = ExtResource("2_jd0lo")
+
+[node name="Background3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(240, 160)
+texture = ExtResource("3_6qklq")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(236, 42)
+script = ExtResource("4_ohydr")
+
+[node name="Left" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Left"]
+position = Vector2(-90.75, 0)
+shape = SubResource("RectangleShape2D_oi4r4")
+
+[node name="Right" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Right"]
+position = Vector2(4, -61.25)
+shape = SubResource("RectangleShape2D_hy83n")
+
+[node name="Up" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Up"]
+position = Vector2(95, 0)
+shape = SubResource("RectangleShape2D_o6p0g")
+
+[node name="Down" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Down"]
+position = Vector2(2, 79)
+shape = SubResource("RectangleShape2D_fljgh")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("5_mxt41")
+
+[connection signal="area_entered" from="CharacterBody2D/Left" to="CharacterBody2D" method="_on_left_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Left" to="CharacterBody2D" method="_on_left_area_exited"]
+[connection signal="area_entered" from="CharacterBody2D/Right" to="CharacterBody2D" method="_on_right_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Right" to="CharacterBody2D" method="_on_right_area_exited"]
+[connection signal="area_entered" from="CharacterBody2D/Up" to="CharacterBody2D" method="_on_up_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Up" to="CharacterBody2D" method="_on_up_area_exited"]
+[connection signal="area_entered" from="CharacterBody2D/Down" to="CharacterBody2D" method="_on_down_area_entered"]
+[connection signal="area_exited" from="CharacterBody2D/Down" to="CharacterBody2D" method="_on_down_area_exited"]

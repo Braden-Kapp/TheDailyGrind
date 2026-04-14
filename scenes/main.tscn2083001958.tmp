@@ -33,8 +33,7 @@ script = ExtResource("1_tipki")
 [node name="StartBackground" type="AnimatedSprite2D" parent="StartScreen"]
 position = Vector2(240, 160)
 sprite_frames = SubResource("SpriteFrames_eb6dy")
-autoplay = "default"
-frame_progress = 0.889732
+frame_progress = 0.801259
 
 [node name="Play" type="Button" parent="StartScreen"]
 offset_left = 341.0

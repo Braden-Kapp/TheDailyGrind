@@ -1,0 +1,207 @@
+[gd_scene load_steps=52 format=3 uid="uid://dxvd3hdp4t73n"]
+
+[ext_resource type="Script" uid="uid://dh2jlgoe7ja4s" path="res://scripts/MGChooseTheRightRock.gd" id="1_4fu6d"]
+[ext_resource type="Texture2D" uid="uid://b4hf6gxdgcgji" path="res://art/minigames/ChooseTheRightRock.png" id="1_jn8fx"]
+[ext_resource type="Texture2D" uid="uid://ddkjnj2n7xr1a" path="res://art/minigames/ChooseTheRightRock_Rock1.png" id="2_4fu6d"]
+[ext_resource type="Texture2D" uid="uid://cjy4t2exc44km" path="res://art/minigames/ChooseTheRightRock_CorrectRock.png" id="3_pmj0g"]
+[ext_resource type="Texture2D" uid="uid://do7nh2084gndt" path="res://art/minigames/ChooseTheRightRock_Rock3.png" id="4_g8bya"]
+[ext_resource type="Texture2D" uid="uid://dq4e80kgadi72" path="res://art/minigames/ChooseTheRightRock_Rock4.png" id="5_qv8td"]
+[ext_resource type="AudioStream" uid="uid://c0er6jgtufsrs" path="res://music/RockPickup.mp3" id="7_pmj0g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fu6d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pmj0g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g8bya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qv8td"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t0kbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6f20"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilbwe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_la6qv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xxt8u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ryfqg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tq3mq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grbhf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6bkb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48m4u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lu621"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1deye"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8q6j5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7x7w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv8d7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_agwus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eof5o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xo3y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m5dhx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ryapg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0i2tg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnown"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vc702"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0llt2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rft53"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xjer0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_auof3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pvmv1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ge178"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6qgs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0vt1i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swel2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcu23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3anb2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0nesd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2p5h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_auxac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1sgr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m4j28"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wtt2q"]
+
+[node name="MGChooseTheRightRock" type="Node2D"]
+script = ExtResource("1_4fu6d")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_jn8fx")
+
+[node name="B1" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 127.0
+offset_right = 121.0
+offset_bottom = 208.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4fu6d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pmj0g")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g8bya")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_qv8td")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_t0kbm")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_c6f20")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ilbwe")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_la6qv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xxt8u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ryfqg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tq3mq")
+
+[node name="R1" type="Sprite2D" parent="B1"]
+position = Vector2(56, 40)
+texture = ExtResource("2_4fu6d")
+
+[node name="B2" type="Button" parent="."]
+offset_left = 137.0
+offset_top = 133.0
+offset_right = 250.0
+offset_bottom = 207.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_grbhf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_w6bkb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_48m4u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_lu621")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1deye")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8q6j5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_w7x7w")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rv8d7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_agwus")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_eof5o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1xo3y")
+
+[node name="R2" type="Sprite2D" parent="B2"]
+position = Vector2(58, 38)
+texture = ExtResource("3_pmj0g")
+
+[node name="B3" type="Button" parent="."]
+offset_left = 278.0
+offset_top = 138.0
+offset_right = 374.0
+offset_bottom = 206.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m5dhx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ryapg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0i2tg")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_bnown")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_vc702")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0llt2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rft53")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_xjer0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_auof3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_pvmv1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ge178")
+
+[node name="R3" type="Sprite2D" parent="B3"]
+position = Vector2(48, 34)
+texture = ExtResource("4_g8bya")
+
+[node name="B4" type="Button" parent="."]
+offset_left = 398.0
+offset_top = 143.0
+offset_right = 460.0
+offset_bottom = 206.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k6qgs")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0vt1i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_swel2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_hcu23")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3anb2")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_0nesd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s2p5h")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_auxac")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w1sgr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_m4j28")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wtt2q")
+
+[node name="R4" type="Sprite2D" parent="B4"]
+position = Vector2(32, 32)
+texture = ExtResource("5_qv8td")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="RockUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pmj0g")
+volume_db = -12.5
+
+[connection signal="mouse_entered" from="B1" to="." method="_on_b_1_mouse_entered"]
+[connection signal="mouse_exited" from="B1" to="." method="_on_b_1_mouse_exited"]
+[connection signal="pressed" from="B1" to="." method="_on_bad_pressed"]
+[connection signal="mouse_entered" from="B2" to="." method="_on_b_2_mouse_entered"]
+[connection signal="mouse_exited" from="B2" to="." method="_on_b_2_mouse_exited"]
+[connection signal="pressed" from="B2" to="." method="_on_correct_pressed"]
+[connection signal="mouse_entered" from="B3" to="." method="_on_b_3_mouse_entered"]
+[connection signal="mouse_exited" from="B3" to="." method="_on_b_3_mouse_exited"]
+[connection signal="pressed" from="B3" to="." method="_on_bad_pressed"]
+[connection signal="mouse_entered" from="B4" to="." method="_on_b_4_mouse_entered"]
+[connection signal="mouse_exited" from="B4" to="." method="_on_b_4_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

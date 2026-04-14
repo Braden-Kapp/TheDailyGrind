@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://bfdid65tn42qo"]
+
+[ext_resource type="Script" uid="uid://cpklb80ixne1y" path="res://scripts/MGKissTheDate.gd" id="1_074sj"]
+[ext_resource type="Texture2D" uid="uid://ko2em60x4snt" path="res://art/minigames/KissTheDate.png" id="1_mgv6i"]
+[ext_resource type="Texture2D" uid="uid://dqejvtabrb38p" path="res://art/minigames/KissTheDate_KissTarget_Corrected.png" id="3_c045g"]
+[ext_resource type="Script" uid="uid://bt16lqj3o775k" path="res://scripts/target.gd" id="4_eykp4"]
+[ext_resource type="AudioStream" uid="uid://dung6hi6qknt7" path="res://music/kiss.mp3" id="5_eykp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sq604"]
+size = Vector2(88, 73)
+
+[sub_resource type="Animation" id="Animation_wayel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(42, 153)]
+}
+
+[sub_resource type="Animation" id="Animation_hbbew"]
+resource_name = "move"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(42, 153), Vector2(435, 153), Vector2(42, 153), Vector2(435, 153), Vector2(42, 153), Vector2(435, 153)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtoo1"]
+_data = {
+&"RESET": SubResource("Animation_wayel"),
+&"move": SubResource("Animation_hbbew")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rdip"]
+size = Vector2(138, 91.5)
+
+[node name="MGKissTheDate" type="Node2D"]
+script = ExtResource("1_074sj")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_mgv6i")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(42, 153)
+sync_to_physics = false
+
+[node name="Target" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(-1, -7)
+texture = ExtResource("3_c045g")
+script = ExtResource("4_eykp4")
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+position = Vector2(1, -5.5)
+shape = SubResource("RectangleShape2D_sq604")
+debug_color = Color(0, 0.644122, 0.287101, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_mtoo1")
+}
+autoplay = "move"
+
+[node name="HeadArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadArea"]
+position = Vector2(240, 153.25)
+shape = SubResource("RectangleShape2D_7rdip")
+debug_color = Color(0.822237, 0.400913, 3.85046e-07, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="KISS" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_eykp4")
+volume_db = -5.0
+
+[connection signal="area_entered" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

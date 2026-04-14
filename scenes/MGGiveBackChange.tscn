@@ -1,0 +1,192 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqqrettlqxsrg"]
+
+[ext_resource type="Script" uid="uid://btgin3nwjuqjp" path="res://scripts/MGGiveBackChange.gd" id="1_8n8eq"]
+[ext_resource type="Texture2D" uid="uid://clhpnt7oa6ef4" path="res://art/minigames/GiveBackChange.png" id="1_vbtnf"]
+
+[node name="MGGiveBackChange" type="Node2D"]
+script = ExtResource("1_8n8eq")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_vbtnf")
+
+[node name="Price1" type="Label" parent="."]
+visible = false
+offset_left = 192.0
+offset_top = 95.0
+offset_right = 284.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 36
+text = "28.97"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Label" parent="Price1"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_right = 58.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Price1"]
+visible = false
+layout_mode = 0
+offset_left = -13.0
+offset_right = 79.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Price1"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_right = 109.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Price1"]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_right = 130.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price2" type="Label" parent="."]
+visible = false
+offset_left = 192.0
+offset_top = 95.0
+offset_right = 284.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 36
+text = "99.99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Label" parent="Price2"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_right = 58.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Price2"]
+visible = false
+layout_mode = 0
+offset_left = -13.0
+offset_right = 79.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Price2"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_right = 109.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Price2"]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_right = 130.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price3" type="Label" parent="."]
+visible = false
+offset_left = 192.0
+offset_top = 95.0
+offset_right = 284.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 36
+text = "08.19"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Label" parent="Price3"]
+visible = false
+layout_mode = 0
+offset_left = -34.0
+offset_right = 58.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Label" parent="Price3"]
+visible = false
+layout_mode = 0
+offset_left = -13.0
+offset_right = 79.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Label" parent="Price3"]
+visible = false
+layout_mode = 0
+offset_left = 17.0
+offset_right = 109.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Label" parent="Price3"]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_right = 130.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.805154, 0.317181, 0.216807, 1)
+theme_override_font_sizes/font_size = 36
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
