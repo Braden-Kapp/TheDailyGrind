@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://reiwuwejf7di"]
+[gd_scene load_steps=44 format=3 uid="uid://reiwuwejf7di"]
 
 [ext_resource type="Script" uid="uid://mp3x1whr3cxv" path="res://scripts/mini_game_select.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://c31qapfj233cv" path="res://scripts/main.gd" id="1_tipki"]
@@ -10,6 +10,16 @@
 [ext_resource type="AudioStream" uid="uid://bfj2aq6miv8lo" path="res://music/Victory3.mp3" id="5_85g3d"]
 [ext_resource type="AudioStream" uid="uid://dinph5imi4bxn" path="res://music/Victory4.mp3" id="6_choun"]
 [ext_resource type="AudioStream" uid="uid://bhq7glk88pcqt" path="res://music/Victory5.mp3" id="7_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://dv4ohrag06d08" path="res://art/loading/Loading background - school.png" id="11_trceg"]
+[ext_resource type="Texture2D" uid="uid://bvgk8ywpe0qv5" path="res://art/loading/Loading background - work.png" id="12_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://b52vplv8gos6r" path="res://art/loading/Loading background - date night.png" id="13_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://bw0lltwp551ts" path="res://art/minigames/Border_NoLivesLost.png" id="14_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://bh0ii1qia36j2" path="res://art/minigames/MainMenuScreen_Night_NoBreath.png" id="14_gqmmt"]
+[ext_resource type="Texture2D" uid="uid://c3xtnvt6xo6he" path="res://art/minigames/Border_OneLivesLost.png" id="15_muem4"]
+[ext_resource type="Texture2D" uid="uid://cd7casx64u8sv" path="res://art/minigames/MainMenuScreen_Night_WithBreath.png" id="15_yc10j"]
+[ext_resource type="Texture2D" uid="uid://wen4y15b2boh" path="res://art/minigames/Border_TwoLivesLost.png" id="16_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://oj206kfbwemg" path="res://art/minigames/Border_AllLivesLost.png" id="17_0ld40"]
+[ext_resource type="AudioStream" uid="uid://ckcjt0gffaoif" path="res://music/MainMenuTheme.mp3" id="18_dp3eg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eb6dy"]
 animations = [{
@@ -25,6 +35,219 @@ animations = [{
 "speed": 0.8
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dp3eg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ld40"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gqmmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yc10j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jscy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pm3ni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6deb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_og1vs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2wyq8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxglm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2f3dj"]
+
+[sub_resource type="Animation" id="Animation_trceg"]
+resource_name = "School"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("School:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.23333, 2),
+"transitions": PackedFloat32Array(1, 1, 0.148651, 1),
+"update": 0,
+"values": [Vector2(240, -160), Vector2(240, 160), Vector2(240, 135), Vector2(240, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_a8y0u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("School:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, -160)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Work:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, -160)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Date:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, -160)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sleep/AnimatedSleep:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, -160)]
+}
+
+[sub_resource type="Animation" id="Animation_jkv2x"]
+resource_name = "Work"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Work:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.25, 2),
+"transitions": PackedFloat32Array(1, 1, 0.148, 1),
+"update": 0,
+"values": [Vector2(240, -160), Vector2(240, 160), Vector2(240, 135), Vector2(240, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_jbj1t"]
+resource_name = "Date"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Date:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.25, 2),
+"transitions": PackedFloat32Array(1, 1, 0.148, 1),
+"update": 0,
+"values": [Vector2(240, -160), Vector2(240, 160), Vector2(240, 135), Vector2(240, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_gqmmt"]
+resource_name = "Sleep"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sleep/AnimatedSleep:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector2(240, -160), Vector2(240, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_yc10j"]
+resource_name = "SleepOut"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sleep/AnimatedSleep:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 4.59479),
+"update": 0,
+"values": [Vector2(240, 160), Vector2(240, -160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jkv2x"]
+_data = {
+&"Date": SubResource("Animation_jbj1t"),
+&"RESET": SubResource("Animation_a8y0u"),
+&"School": SubResource("Animation_trceg"),
+&"Sleep": SubResource("Animation_gqmmt"),
+&"SleepOut": SubResource("Animation_yc10j"),
+&"Work": SubResource("Animation_jkv2x")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jscy8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_gqmmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yc10j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.7
+}]
+
+[sub_resource type="Animation" id="Animation_muem4"]
+resource_name = "Hud"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HFull:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.966667),
+"transitions": PackedFloat32Array(0.329877, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dp3eg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HFull:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ld40"]
+_data = {
+&"Hud": SubResource("Animation_muem4"),
+&"RESET": SubResource("Animation_dp3eg")
+}
+
 [node name="main" type="Node2D"]
 script = ExtResource("1_tipki")
 
@@ -34,13 +257,24 @@ script = ExtResource("1_tipki")
 position = Vector2(240, 160)
 sprite_frames = SubResource("SpriteFrames_eb6dy")
 autoplay = "default"
-frame_progress = 0.889732
+frame_progress = 0.159683
 
 [node name="Play" type="Button" parent="StartScreen"]
 offset_left = 341.0
 offset_top = 234.0
 offset_right = 476.0
 offset_bottom = 311.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dp3eg")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_0ld40")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gqmmt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yc10j")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_jscy8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_pm3ni")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_y6deb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_og1vs")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_2wyq8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vxglm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2f3dj")
 
 [node name="miniGameSelect" type="Node2D" parent="."]
 script = ExtResource("1_o5qli")
@@ -75,10 +309,81 @@ volume_db = -10.0
 
 [node name="Transitions" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Transitions"]
+[node name="School" type="Sprite2D" parent="Transitions"]
+position = Vector2(240, -160)
+texture = ExtResource("11_trceg")
+
+[node name="TransitionPlayer" type="AnimationPlayer" parent="Transitions"]
+libraries = {
+&"": SubResource("AnimationLibrary_jkv2x")
+}
+
+[node name="Work" type="Sprite2D" parent="Transitions"]
+position = Vector2(240, -160)
+texture = ExtResource("12_a8y0u")
+
+[node name="Date" type="Sprite2D" parent="Transitions"]
+position = Vector2(240, -160)
+texture = ExtResource("13_jkv2x")
+
+[node name="Sleep" type="Node2D" parent="."]
+
+[node name="AnimatedSleep" type="AnimatedSprite2D" parent="Sleep"]
+position = Vector2(240, -160)
+sprite_frames = SubResource("SpriteFrames_jscy8")
+frame_progress = 0.0831576
+
+[node name="NightLabel" type="Label" parent="Sleep"]
+visible = false
+offset_left = 339.0
+offset_top = 215.0
+offset_right = 475.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0.4, 0.847059, 0.439216, 1)
+text = "Day 1 Complete :)
+Get Some Rest"
 
 [node name="Huds" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Huds"]
+[node name="HFull" type="Sprite2D" parent="Huds"]
+position = Vector2(240, 160)
+scale = Vector2(2, 2)
+texture = ExtResource("14_a8y0u")
+
+[node name="H2" type="Sprite2D" parent="Huds"]
+visible = false
+position = Vector2(240, 160)
+texture = ExtResource("15_muem4")
+
+[node name="H1" type="Sprite2D" parent="Huds"]
+visible = false
+position = Vector2(240, 160)
+texture = ExtResource("16_dp3eg")
+
+[node name="H0" type="Sprite2D" parent="Huds"]
+visible = false
+position = Vector2(240, 160)
+texture = ExtResource("17_0ld40")
+
+[node name="HudTransition" type="AnimationPlayer" parent="Huds"]
+libraries = {
+&"": SubResource("AnimationLibrary_0ld40")
+}
+
+[node name="Score" type="Label" parent="."]
+visible = false
+offset_left = 262.0
+offset_top = 3.0
+offset_right = 474.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.596078, 0.807843, 0.552941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.227451, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Points: 0"
+horizontal_alignment = 2
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_dp3eg")
 
 [connection signal="pressed" from="StartScreen/Play" to="." method="_on_play_pressed"]
+[connection signal="finished" from="MainTheme" to="." method="_on_main_theme_finished"]

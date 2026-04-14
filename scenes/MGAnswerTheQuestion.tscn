@@ -17,7 +17,7 @@ script = ExtResource("1_2fmug")
 position = Vector2(240, 160)
 texture = ExtResource("1_70oug")
 
-[node name="Questions" type="Node" parent="."]
+[node name="Questions" type="Node2D" parent="."]
 
 [node name="Q1" type="Label" parent="Questions"]
 visible = false
@@ -63,7 +63,7 @@ label_settings = SubResource("LabelSettings_70oug")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Answers" type="Node" parent="."]
+[node name="Answers" type="Node2D" parent="."]
 
 [node name="2" type="Label" parent="Answers"]
 offset_left = 370.0

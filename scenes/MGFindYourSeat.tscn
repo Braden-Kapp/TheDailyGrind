@@ -7,6 +7,15 @@
 [ext_resource type="Script" uid="uid://bgmfk6b521n2f" path="res://scripts/findYourSeatCharacter.gd" id="4_ohydr"]
 [ext_resource type="Texture2D" uid="uid://gheee68wtu4r" path="res://art/minigames/FindYourSeat_CrocIcon.png" id="5_mxt41"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxanf"]
+size = Vector2(57, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxt41"]
+size = Vector2(490, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al2np"]
+size = Vector2(8.5, 11.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi4r4"]
 size = Vector2(62.75, 20)
 
@@ -21,62 +30,12 @@ size = Vector2(31, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3faka"]
 size = Vector2(31, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxanf"]
-size = Vector2(57, 40)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxt41"]
-size = Vector2(490, 52)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_al2np"]
-size = Vector2(8.5, 11.5)
-
 [node name="MGFindYourSeat" type="Node2D"]
 script = ExtResource("1_jd0lo")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(414, 111)
-script = ExtResource("4_ohydr")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("5_mxt41")
-
-[node name="Left" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Left"]
-position = Vector2(-80.375, 1)
-shape = SubResource("RectangleShape2D_oi4r4")
-
-[node name="Up" type="Area2D" parent="CharacterBody2D"]
-position = Vector2(-10, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Up"]
-position = Vector2(4, -69.5)
-shape = SubResource("RectangleShape2D_jd0lo")
-
-[node name="Down" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Down"]
-position = Vector2(5, 82)
-shape = SubResource("RectangleShape2D_6qklq")
-
-[node name="Right" type="Area2D" parent="CharacterBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Right"]
-position = Vector2(74.5, 1)
-shape = SubResource("RectangleShape2D_ohydr")
-
-[node name="Goal" type="Area2D" parent="CharacterBody2D"]
-scale = Vector2(1.68, 1.44)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Goal"]
-position = Vector2(5.5, 6)
-shape = SubResource("RectangleShape2D_3faka")
-debug_color = Color(0.807221, 0.412744, 0.0948002, 0.42)
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Background1" type="Sprite2D" parent="."]
-z_index = -1
 position = Vector2(240, 160)
 texture = ExtResource("1_qxanf")
 
@@ -195,7 +154,6 @@ shape = SubResource("RectangleShape2D_al2np")
 debug_color = Color(0.613874, 0.537314, 5.77569e-07, 0.42)
 
 [node name="Background2" type="Sprite2D" parent="."]
-z_index = -1
 position = Vector2(240, 160)
 texture = ExtResource("2_jd0lo")
 
@@ -314,7 +272,6 @@ shape = SubResource("RectangleShape2D_al2np")
 debug_color = Color(0.613874, 0.537314, 5.77569e-07, 0.42)
 
 [node name="Background3" type="Sprite2D" parent="."]
-z_index = -1
 position = Vector2(240, 160)
 texture = ExtResource("3_6qklq")
 
@@ -431,5 +388,45 @@ position = Vector2(-237, -160)
 position = Vector2(262.25, 55.75)
 shape = SubResource("RectangleShape2D_al2np")
 debug_color = Color(0.613874, 0.537314, 5.77569e-07, 0.42)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(414, 111)
+script = ExtResource("4_ohydr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("5_mxt41")
+
+[node name="Left" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Left"]
+position = Vector2(-80.375, 1)
+shape = SubResource("RectangleShape2D_oi4r4")
+
+[node name="Up" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(-10, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Up"]
+position = Vector2(4, -69.5)
+shape = SubResource("RectangleShape2D_jd0lo")
+
+[node name="Down" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Down"]
+position = Vector2(5, 82)
+shape = SubResource("RectangleShape2D_6qklq")
+
+[node name="Right" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Right"]
+position = Vector2(74.5, 1)
+shape = SubResource("RectangleShape2D_ohydr")
+
+[node name="Goal" type="Area2D" parent="CharacterBody2D"]
+scale = Vector2(1.68, 1.44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Goal"]
+position = Vector2(5.5, 6)
+shape = SubResource("RectangleShape2D_3faka")
+debug_color = Color(0.807221, 0.412744, 0.0948002, 0.42)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

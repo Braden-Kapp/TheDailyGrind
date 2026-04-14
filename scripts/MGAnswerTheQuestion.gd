@@ -6,9 +6,13 @@ var gameOn = true
 var question
 
 func end_game():
+	get_node("Questions").visible = false
+	get_node("Answers").visible = false
 	emit_signal("finished")
 
 func failed_game():
+	get_node("Questions").visible = false
+	get_node("Answers").visible = false
 	emit_signal("fail")
 	
 # Called when the node enters the scene tree for the first time.

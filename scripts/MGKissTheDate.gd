@@ -4,6 +4,7 @@ signal fail
 var pressable = false;
 
 func end_game():
+	await get_tree().create_timer(.5).timeout
 	emit_signal("finished")
 
 func failed_game():
