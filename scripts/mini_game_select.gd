@@ -5,7 +5,7 @@ extends Node2D
 var current_minigame: Node = null
 var score = 0
 var lives = 3
-var currentTimer = 9.0
+var currentTimer = 7.5
 var randVictory= 0
 signal miniEnd
 var processing = false

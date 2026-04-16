@@ -1,0 +1,102 @@
+[gd_scene load_steps=17 format=3 uid="uid://bjc8lyj5m1kxr"]
+
+[ext_resource type="Script" uid="uid://dmtrmslyacjok" path="res://scripts/MGEatYourFood.gd" id="1_cnj50"]
+[ext_resource type="Texture2D" uid="uid://xobqv7vtjsrk" path="res://art/minigames/EatYourFood_Background.png" id="1_g33fd"]
+[ext_resource type="Texture2D" uid="uid://lb2nbdxephrj" path="res://art/minigames/EatYourFood_CrocClosed.png" id="3_8kw42"]
+[ext_resource type="Texture2D" uid="uid://mn4te3w2koux" path="res://art/minigames/EatYourFood_CrocOpen.png" id="4_siokb"]
+[ext_resource type="Texture2D" uid="uid://cifpqyra0rdm7" path="res://art/minigames/EatYourFood_OtterClosed.png" id="5_g7cam"]
+[ext_resource type="Texture2D" uid="uid://cq7ecs1pi5wv7" path="res://art/minigames/EatYourFood_OtterOpen.png" id="6_fj2yd"]
+[ext_resource type="Texture2D" uid="uid://dc8ylxi3qitk2" path="res://art/minigames/EatYourFood_SixFood.png" id="7_w0a3n"]
+[ext_resource type="Texture2D" uid="uid://cuqgn3ypeire6" path="res://art/minigames/EatYourFood_FiveFood.png" id="8_rwwsr"]
+[ext_resource type="Texture2D" uid="uid://dtmji44pvmyif" path="res://art/minigames/EatYourFood_FourFood.png" id="9_xe8xl"]
+[ext_resource type="Texture2D" uid="uid://btm80s62c22ci" path="res://art/minigames/EatYourFood_ThreeFood.png" id="10_ryg46"]
+[ext_resource type="Texture2D" uid="uid://j5fst50maiv4" path="res://art/minigames/EatYourFood_TwoFood.png" id="11_c652y"]
+[ext_resource type="Texture2D" uid="uid://dx3mrhibhjg32" path="res://art/minigames/EatYourFood_OneFood.png" id="12_wveq8"]
+[ext_resource type="Texture2D" uid="uid://fcj0m1q15af4" path="res://art/minigames/EatYourFood_NoFoodEaten.png" id="13_uvrki"]
+[ext_resource type="AudioStream" uid="uid://d1focjpgbp70n" path="res://music/Chomp.mp3" id="14_rwwsr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7l0d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8kw42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_siokb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cmnvv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_g7cam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fj2yd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MGEatYourFood" type="Node2D"]
+script = ExtResource("1_cnj50")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(240, 160)
+texture = ExtResource("1_g33fd")
+
+[node name="People" type="Node2D" parent="."]
+
+[node name="Croc" type="AnimatedSprite2D" parent="People"]
+position = Vector2(400, 197)
+sprite_frames = SubResource("SpriteFrames_7l0d4")
+frame_progress = 0.771541
+
+[node name="Otter" type="AnimatedSprite2D" parent="People"]
+position = Vector2(78, 207)
+sprite_frames = SubResource("SpriteFrames_cmnvv")
+frame_progress = 0.562929
+
+[node name="Burger" type="Node2D" parent="."]
+
+[node name="B7" type="Sprite2D" parent="Burger"]
+position = Vector2(230, 157)
+texture = ExtResource("7_w0a3n")
+
+[node name="B6" type="Sprite2D" parent="Burger"]
+position = Vector2(230, 147)
+texture = ExtResource("8_rwwsr")
+
+[node name="B5" type="Sprite2D" parent="Burger"]
+position = Vector2(230, 140)
+texture = ExtResource("9_xe8xl")
+
+[node name="B4" type="Sprite2D" parent="Burger"]
+position = Vector2(230, 140)
+texture = ExtResource("10_ryg46")
+
+[node name="B3" type="Sprite2D" parent="Burger"]
+position = Vector2(230, 140)
+texture = ExtResource("11_c652y")
+
+[node name="B2" type="Sprite2D" parent="Burger"]
+position = Vector2(230, 140)
+texture = ExtResource("12_wveq8")
+
+[node name="B1" type="Sprite2D" parent="Burger"]
+position = Vector2(230, 140)
+texture = ExtResource("13_uvrki")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Chomp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_rwwsr")
+volume_db = -10.0
+pitch_scale = 2.47
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

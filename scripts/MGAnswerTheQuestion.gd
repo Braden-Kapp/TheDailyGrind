@@ -6,6 +6,8 @@ var gameOn = true
 var question
 
 func end_game():
+	await get_tree().create_timer(.3).timeout
+	get_node("Noise").playing = false
 	get_node("Questions").visible = false
 	get_node("Answers").visible = false
 	emit_signal("finished")
@@ -30,6 +32,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Spacebar"):
+		get_node("Noise").playing = true
 		if(question ==0 and get_node("Answers/2").visible == true):
 			end_game()
 		elif(question ==1 and get_node("Answers/4").visible == true):

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dphf66rsy17ww"]
+[gd_scene load_steps=6 format=3 uid="uid://dphf66rsy17ww"]
 
 [ext_resource type="Script" uid="uid://d0a3ployfuqni" path="res://scripts/MGAnswerTheQuestion.gd" id="1_2fmug"]
 [ext_resource type="Texture2D" uid="uid://bx6f2dw1gm4h0" path="res://art/minigames/AnswerTheQuestion.png" id="1_70oug"]
+[ext_resource type="AudioStream" uid="uid://khw6d6c8pirh" path="res://music/Answer.mp3" id="3_mjo3j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_70oug"]
 font_size = 30
@@ -109,5 +110,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mjo3j")
+volume_db = -5.0
+pitch_scale = 2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

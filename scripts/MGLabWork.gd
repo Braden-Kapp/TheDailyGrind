@@ -48,18 +48,17 @@ func spawn_droplets():
 	await get_tree().create_timer(1).timeout
 	parent_node.add_child.call_deferred(droplet_instanceB)
 
-func _process(delta: float) -> void:
-	if counter == 3:
-		parent_node.end_game()
-		
 #func end_game():
 #	emit_signal("finished")
 	
 func _on_area_2d_body_entered(body: Node) -> void:
 	if body is RigidBody2D:
 		counter += 1
+		body.get_parent().get_parent().get_node("Clink").playing = true
 		print(counter)
 		body.get_parent().queue_free() 
+		if counter == 3:
+			parent_node.end_game()
 
 
 func _on_timer_timeout() -> void:

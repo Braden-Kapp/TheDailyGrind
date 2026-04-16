@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://csixle66ntrw3"]
+[gd_scene load_steps=22 format=3 uid="uid://csixle66ntrw3"]
 
 [ext_resource type="Script" uid="uid://b822qx8ghb8lk" path="res://scripts/MGFillOutTheExam.gd" id="1_4152b"]
 [ext_resource type="Texture2D" uid="uid://cvtgak8luowh2" path="res://art/minigames/FillOutTheExam.png" id="1_xrjj1"]
 [ext_resource type="Texture2D" uid="uid://cotp1hcg7whnq" path="res://art/minigames/FillOutTheExam_FillInThisOne.png" id="2_b2iin"]
 [ext_resource type="Texture2D" uid="uid://bwlox5egpn4i1" path="res://art/minigames/FillOutTheExam_FilledIn.png" id="4_c26kb"]
+[ext_resource type="AudioStream" uid="uid://c1r86csksrfp2" path="res://music/Pencil (1).mp3" id="5_c26kb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_me23y"]
 
@@ -121,6 +122,10 @@ position = Vector2(16, 15)
 texture = ExtResource("4_c26kb")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c26kb")
+volume_db = -10.0
 
 [connection signal="pressed" from="Q1" to="." method="_on_q_1_pressed"]
 [connection signal="pressed" from="Q2" to="." method="_on_q_2_pressed"]

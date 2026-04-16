@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6n7up703uynt"]
+[gd_scene load_steps=9 format=3 uid="uid://b6n7up703uynt"]
 
 [ext_resource type="Script" uid="uid://bbnua2x1cruyp" path="res://scripts/MGStirTheCoffee.gd" id="1_jjy2p"]
 [ext_resource type="Texture2D" uid="uid://dgyobo2s8gcxo" path="res://art/minigames/StirTheCoffee.png" id="1_rp41w"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6ki5u5460wt" path="res://art/minigames/StirTheCoffee_Liquid3.png" id="5_ycoxk"]
 [ext_resource type="Texture2D" uid="uid://bjfwjr5uj5q5" path="res://art/minigames/StirTheCoffee_Liquid2.png" id="6_nh76q"]
 [ext_resource type="Texture2D" uid="uid://dtu3vg2yhw4v0" path="res://art/minigames/StirTheCoffee_Liquid1.png" id="7_4rna5"]
+[ext_resource type="AudioStream" uid="uid://ctua5iihyrtv4" path="res://music/Stir.mp3" id="8_hk1cv"]
 
 [node name="MGStirTheCoffee" type="Node2D"]
 script = ExtResource("1_jjy2p")
@@ -83,5 +84,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hk1cv")
+volume_db = -5.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
